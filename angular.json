@@ -3,22 +3,21 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "update-image-to-firebase": {
-      "projectType": "application",
-      "schematics": {},
+    "ImageGalleryWithAngularAndFirebase": {
       "root": "",
       "sourceRoot": "src",
+      "projectType": "application",
       "prefix": "app",
+      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/update-image-to-firebase",
+            "outputPath": "dist/ImageGalleryWithAngularAndFirebase",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -26,7 +25,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "update-image-to-firebase:build"
+            "browserTarget": "ImageGalleryWithAngularAndFirebase:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "update-image-to-firebase:build:production"
+              "browserTarget": "ImageGalleryWithAngularAndFirebase:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "update-image-to-firebase:build"
+            "browserTarget": "ImageGalleryWithAngularAndFirebase:build"
           }
         },
         "test": {
@@ -77,44 +77,60 @@
           "options": {
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
           }
-        },
+        }
+      }
+    },
+    "ImageGalleryWithAngularAndFirebase-e2e": {
+      "root": "e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "update-image-to-firebase:serve"
+            "devServerTarget": "ImageGalleryWithAngularAndFirebase:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "update-image-to-firebase:serve:production"
+              "devServerTarget": "ImageGalleryWithAngularAndFirebase:serve:production"
             }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
-    }},
-  "defaultProject": "update-image-to-firebase"
+    }
+  },
+  "defaultProject": "ImageGalleryWithAngularAndFirebase"
 }

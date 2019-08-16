@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyAa1l4nBeQFX_WQs11Nc9inv4clDExSHdY",
+    authDomain: "airbnb-upload-image.firebaseapp.com",
+    databaseURL: "https://airbnb-upload-image.firebaseio.com",
+    projectId: "airbnb-upload-image",
+    storageBucket: "airbnb-upload-image.appspot.com",
+    messagingSenderId: "954996464913",
+    appId: "1:954996464913:web:1a6ace8d3a62f940"
+  }
 };
 
 /*

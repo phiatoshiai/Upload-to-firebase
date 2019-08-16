@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'update-image-to-firebase'`, () => {
+  it(`should have as title 'ImageGalleryWithAngularAndFirebase'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('update-image-to-firebase');
+    expect(app.title).toEqual('ImageGalleryWithAngularAndFirebase');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to update-image-to-firebase!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to ImageGalleryWithAngularAndFirebase!');
   });
 });
